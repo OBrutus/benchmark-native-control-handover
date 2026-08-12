@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# Generated Go artifacts
+# ---------------------------------------------------------------------------
+# The .aar and its sources jar are build output, not source. Regenerate with
+# ./build-aar.sh — a fresh clone must run that before Gradle will build.
+android/app/libs/gocore.aar
+android/app/libs/gocore-sources.jar
+
+# Go test/coverage output
+*.test
+*.out
+coverage.txt
+
+# ---------------------------------------------------------------------------
+# Gradle
+# ---------------------------------------------------------------------------
+.gradle/
+build/
+
+# The wrapper jar IS committed, on purpose — it is how a fresh clone gets the
+# right Gradle version without a preinstalled one.
+!gradle/wrapper/gradle-wrapper.jar
+
+# ---------------------------------------------------------------------------
+# Android
+# ---------------------------------------------------------------------------
+# Machine-specific: contains sdk.dir for whoever cloned it.
+local.properties
+
+*.apk
+*.aab
+*.ap_
+*.dex
+captures/
+.cxx/
+output.json
+
+# Signing material — never commit these.
+*.jks
+*.keystore
+
+# ---------------------------------------------------------------------------
+# IDE
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+.kotlin/
+
+# ---------------------------------------------------------------------------
+# macOS
+# ---------------------------------------------------------------------------
+.DS_Store
