@@ -37,6 +37,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
+            android:text="Engine" />
+
+        <RadioGroup
+            android:id="@+id/engineGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/engineGo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Go" />
+
+            <RadioButton
+                android:id="@+id/engineCpp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="C++" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
             android:text="Language" />
 
         <Spinner
@@ -57,6 +84,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Greet all (async + callbacks)" />
+
+        <Button
+            android:id="@+id/benchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Benchmark loop (Go vs C++)" />
 
         <ProgressBar
             android:id="@+id/progressBar"

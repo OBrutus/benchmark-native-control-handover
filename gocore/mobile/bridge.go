@@ -36,6 +36,18 @@ func Version() string {
 	return "gocore 0.1.0 (" + runtimeVersion() + ")"
 }
 
+// BenchmarkJSON runs the shared integer-loop workload and returns
+// {"iterations":…,"checksum":"0x…","nanos":…} as JSON.
+//
+// Timing is taken inside Go, so `nanos` is pure compute. Compare it against the
+// wall time the caller measures in Java to see what the boundary costs.
+//
+// iterations is int64 (Java `long`) rather than int, because Go's int is also
+// 64-bit here and being explicit avoids the int/long confusion at the boundary.
+func BenchmarkJSON(iterations int64) ([]byte, error) {
+	return json.Marshal(core.RunBenchmark(iterations))
+}
+
 // Greeter wraps core.Greeter. gomobile turns this into a Java class whose
 // methods forward across JNI; `inner` is unexported so it is invisible there.
 type Greeter struct {
